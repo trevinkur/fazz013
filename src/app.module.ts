@@ -6,7 +6,6 @@ import { ResponseWrapper } from "./utils/responseWrapper";
 
 export default class AppModule {
     constructor(
-        // protected pg: Pg = new Pg(),
         protected productValidator: ProductValidator = new ProductValidator(),
         protected productService: ProductService = new ProductService(pool),
         protected productsController: ProductsController = new ProductsController(productService),
