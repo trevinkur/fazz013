@@ -24,7 +24,7 @@ export class ProductValidator {
         if(err.length > 0) {
             throw new Exception({
                 message: "validatiion Error",
-                statusCode: 200,
+                statusCode: 400,
                 data: err
             })
         }
@@ -52,7 +52,7 @@ export class ProductValidator {
             err.push("description or product_price or product_name must be fill")
             throw new Exception({
                 message: "validatiion Error",
-                statusCode: 200,
+                statusCode: 400,
                 data: err
             })
         }

@@ -36,7 +36,8 @@ export default class ProductRoute {
                 return res.send(response)
             } catch(_err) {
                 const err: IResponse = _err as IResponse
-                return res.send(this.responseWrapper.exception(err, err.message))
+                return res.status(err.statusCode)
+                .send(this.responseWrapper.exception(err, err.message))
             }
         })
 
@@ -53,7 +54,8 @@ export default class ProductRoute {
                 return res.send(response)
             } catch(_err) {
                 const err: IResponse = _err as IResponse
-                return res.send(this.responseWrapper.exception(err, err.message))
+                return res.status(err.statusCode)
+                .send(this.responseWrapper.exception(err, err.message))
             }
         })
 
